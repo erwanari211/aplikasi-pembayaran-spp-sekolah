@@ -20,3 +20,4 @@ Auth::routes(['register' => false]);
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('student-classes', 'StudentClassController')->middleware(['auth']);
+Route::resource('student-spps', 'StudentSppController')->middleware(['auth']);
