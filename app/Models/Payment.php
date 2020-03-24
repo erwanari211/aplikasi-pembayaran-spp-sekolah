@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Student extends Model
+class Payment extends Model
 {
     protected $fillable = [
-        'user_id', 'student_class_id', 'student_spp_id', 'code', 'phone', 'address',
+        'user_id', 'student_id', 'student_spp_id',
+        'paid_at', 'year', 'month', 'status', 'amount',
     ];
 
     public function user()
@@ -15,18 +16,13 @@ class Student extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function studentClass()
+    public function student()
     {
-        return $this->belongsTo('App\Models\StudentClass');
+        return $this->belongsTo('App\Models\Student');
     }
 
     public function studentSpp()
     {
         return $this->belongsTo('App\Models\StudentSpp');
-    }
-
-    public function payments()
-    {
-        return $this->hasMany('App\Models\Payment');
     }
 }

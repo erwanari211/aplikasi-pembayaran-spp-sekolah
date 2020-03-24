@@ -23,3 +23,4 @@ Route::resource('student-classes', 'StudentClassController')->middleware(['auth'
 Route::resource('student-spps', 'StudentSppController')->middleware(['auth']);
 Route::resource('students', 'StudentController')->middleware(['auth']);
 Route::resource('operators', 'OperatorController')->middleware(['auth']);
+Route::resource('payments', 'PaymentController')->middleware(['auth']);

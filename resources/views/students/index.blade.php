@@ -45,7 +45,12 @@
                     </td>
                     <td>{{ $student->user->name }}</td>
                     <td>{{ $student->user->username }}</td>
-                    <td>{{ $student->studentClass->name }}</td>
+                    <td>
+                      <a class="btn btn-sm btn-outline-secondary"
+                        href="{{ route('student-classes.show', $student->student_class_id) }}">
+                        {{ $student->studentClass->name }}
+                      </a>
+                    </td>
                   </tr>
                 @endforeach
               @else
